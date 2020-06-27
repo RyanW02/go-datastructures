@@ -129,14 +129,10 @@ func (sll *SinglyLinkedList) Remove(value interface{}, n int) (removals int) {
 
 	current := sll.head
 
-outer:
-	for current != nil {
+	for current != nil && removals != n {
 		for current.Next != nil && current.Next.Value == value {
 			current.Next = current.Next.Next
 			removals++
-			if removals == n {
-				break outer
-			}
 		}
 
 		current = current.Next
