@@ -124,3 +124,42 @@ func main() {
 ```bash
 go test ./slicelist
 ```
+
+## [Stack](https://github.com/RyanW02/go-datastructures/tree/master/stack)
+A traditional LIFO stack data structure.
+
+### Usage
+```go
+func main() {
+	// instantiate a stack
+	stack := stack.NewStack()
+
+	// let's add some data
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+	stack.Push(1)
+	stack.Push(3)
+
+	// let's take a look at some data
+	stack.Peek() // 1
+
+	// check whether the stack is empty
+	stack.Empty() // false
+	
+	// check the stack size
+	stack.Size() // 5
+	
+	// pop values from the stack
+	stack.Pop() // 1
+	stack.Pop() // 2
+	
+	// search for the first instance of 3 in the stack
+	stack.Search(3) // 0, since we popped 1 and 2
+}
+```
+
+### Testing
+```bash
+go test ./stack
+```
