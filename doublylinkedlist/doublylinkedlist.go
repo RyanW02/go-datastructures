@@ -162,8 +162,6 @@ func (dll *DoublyLinkedList) Set(index int, value interface{}) {
 	}
 
 	current.Value = value
-
-	return
 }
 
 func (dll *DoublyLinkedList) last() *Node {

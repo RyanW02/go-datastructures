@@ -130,7 +130,7 @@ func (sll *SinglyLinkedList) Remove(value interface{}, n int) (removals int) {
 	current := sll.head
 
 	for current != nil && removals != n {
-		for current.Next != nil && current.Next.Value == value {
+		for current.Next != nil && current.Next.Value == value && removals != n {
 			current.Next = current.Next.Next
 			removals++
 		}
@@ -153,8 +153,6 @@ func (sll *SinglyLinkedList) Set(index int, value interface{}) {
 	}
 
 	current.Value = value
-
-	return
 }
 
 func (sll *SinglyLinkedList) last() *Node {
